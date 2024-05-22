@@ -11,6 +11,25 @@ body {
     color: var(--text-color);
 }
 
+/* Light theme */
+.light {
+    --bg-color: #ffffff;
+    --text-color: black;
+    --header-bg: rgb(84, 187, 161);
+}
+
+/* Dark theme */
+.dark {
+    --bg-color: #333333;
+    --text-color: white;
+    --header-bg: rgb(40, 40, 40);
+}
+
+/* Apply theme */
+body, .light, .dark {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
 header {
     display: flex;
     justify-content: space-between;
@@ -33,3 +52,4 @@ a {
     text-decoration: none;
     color: blue;
 }
+
