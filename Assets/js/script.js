@@ -37,8 +37,14 @@ document.addEventListener('DOMContentLoaded', function() {
                     content: content,
 
                 }
-
-                
+                // fetch existsing posts, or initialize array if no posts exist
+                let blogPosts = JSON.parse(localStorage.getItem('blogPosts')) || [];
+                // add newest post to the list
+                blogPosts.push(blogPost);
+                // updates list in local storage
+                localStorage.setItem('blogPosts', JSON.stringify(blogPosts));
+                // sends user to posts page after submitting
+                window.location.href = 'posts.html'
             }
         })
     }
