@@ -20,14 +20,27 @@ document.addEventListener('DOMContentLoaded', function() {
     const blogForm = document.querySelector('#blog-form');
     // checks if blogForm exists on page
     if (blogForm) {
-        blogForm.addEventListener('submit', function(event)) {
+        blogForm.addEventListener('submit', function(event) {
             event.preventDefault();
 
             // fetch form data
             const username = document.querySelector('#username').value.trim();
             const title = document.querySelector('#title').value.trim();
             const content = document.querySelector('#content').value.trim();
-        }
+
+            if (username === '' || title === '' || content === '') {
+                window.alert('Inputs cannot be blank.')
+            } else {
+                const blogPost = {
+                    username: username,
+                    title: title,
+                    content: content,
+
+                }
+
+                
+            }
+        })
     }
 
 
