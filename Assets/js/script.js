@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const blogForm = document.querySelector('#blog-form');
     // checks if blogForm exists on page
     if (blogForm) {
-        blogForm.addEventListener('submit', function(event) {
+        blogForm.addEventListener('submit', function(event)  {
             event.preventDefault();
 
             // fetch form data
@@ -49,7 +49,35 @@ document.addEventListener('DOMContentLoaded', function() {
         })
     }
 
+    const postsContainer = document.querySelector('#posts-container');
 
+    //check if postsContainer is on page
+    if (postsContainer) {
+        const blogPosts = JSON.parse(localStorage.getItem('blogPosts'))
+        //iterate through blogPosts array
+        for (let i =0; i < blogPosts.length; i++) {
+            const post = blogPosts[i];
+            
+            // creating blog post elements
+
+            //creates div for post class
+            const postEl = document.createElement('div');
+            postEl.setAttribute('class', 'post');
+
+            //fetches post title
+            const titleEl = document.createElement('h2');
+            titleEl.textContent = post.title
+
+            //fetches post content
+            const contentEl = document.createElement('p');
+            contentEl.textContent = post.content;
+
+            //fetches post author
+            const authorEl = document.createElement('p');
+            autherEl.textContent = post.username;
+
+        }
+    }
 
 
 
