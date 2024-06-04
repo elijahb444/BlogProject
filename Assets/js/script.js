@@ -68,13 +68,22 @@ document.addEventListener('DOMContentLoaded', function() {
             const titleEl = document.createElement('h2');
             titleEl.textContent = post.title
 
+            //fetches post author
+            const authorEl = document.createElement('h3');
+            authorEl.textContent = post.username;
+
             //fetches post content
             const contentEl = document.createElement('p');
             contentEl.textContent = post.content;
 
-            //fetches post author
-            const authorEl = document.createElement('p');
-            autherEl.textContent = post.username;
+
+            // appends elements to postEl
+            postEl.appendChild(authorEl);
+            postEl.appendChild(titleEl);
+            postEl.appendChild(contentEl);
+
+            // appends postEl to postsContainer
+            postsContainer.appendChild(postEl);
 
         }
     }
